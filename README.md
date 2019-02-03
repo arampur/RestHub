@@ -1,6 +1,6 @@
 # RestHub
 RestApiImplementation
-Rest Api Qlik Test Project
+Qlik Test Project
 
 Exposes a simple REST API that allows users to:
 
