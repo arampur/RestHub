@@ -17,14 +17,12 @@ exports.index = function (req, res) {
         });
     });
 };
-// Handle create contact actions
+// Handle create user actions
 exports.new = function (req, res) {
     var user = new User();
     user.name = req.body.name ? req.body.name : user.name;
-    //User.gender = req.body.gender;
     user.message = req.body.message;
-    //User.phone = req.body.phone;
-// save the contact and check for errors
+// save the user and check for errors
     user.save(function (err) {
         // if (err)
         //     res.json(err);
@@ -34,7 +32,7 @@ res.json({
         });
     });
 };
-// Handle view contact info
+// Handle view user details info
 exports.view = function (req, res) {
     User.findById(req.params.user_id, function (err, user) {
         if (err)
@@ -45,16 +43,14 @@ exports.view = function (req, res) {
         });
     });
 };
-// Handle update contact info
+// Handle update message info
 exports.update = function (req, res) {
 User.findById(req.params.user_id, function (err, user) {
         if (err)
             res.send(err);
 user.name = req.body.name ? req.body.name : user.name;
-        //User.gender = req.body.gender;
         user.message = req.body.message;
-        //contact.phone = req.body.phone;
-// save the contact and check for errors
+// save the message and check for errors
         user.save(function (err) {
             if (err)
                 res.json(err);

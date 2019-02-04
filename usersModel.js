@@ -1,4 +1,4 @@
-// contactModel.js
+// usersModel.js
 var mongoose = require('mongoose');
 // Setup schema
 var usersSchema = mongoose.Schema({
@@ -15,7 +15,7 @@ var usersSchema = mongoose.Schema({
         default: Date.now
     }
 });
-// Export Contact model
+// Export user model
 var User = module.exports = mongoose.model('user', usersSchema);
 module.exports.get = function (callback, limit) {
     User.find(callback).limit(limit);
