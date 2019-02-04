@@ -6,39 +6,37 @@ Exposes a simple REST API that allows users to:
 
 a. Allows users to submit/post messages:
 
-Method = POST, URL = /api
+Method = POST, URL = /users
 
-Parameter = message(Required) -> string -> message data -> return 201 status code on success
+Parameter = name(Required) -> string -> message(Required) -> string -> Displays success message..
 
 b. Lists received messages:
 
-Method = GET, URL = /api/index.js/messages
+Method = GET, URL = /api/index.js/users
 
-return 200 status code on success and shows list of messages
+success and shows list of messages and users (JSON)
 
 c. Retrieves a specific message on demand, and determines if it is a palindrome:
 
-Method = GET, URL = /api/index.js/messages/{MSG_ID}
+Method = GET, URL = /api/index.js/users/{MSG_ID}
 
-Parameter -> MSG_ID -> integer -> return 200 status code on success
+Parameter -> MSG_ID -> integer -> returns with success on successful message retreival
 
 d. Allows users to delete specific messages
 
-Method = DELETE, URL = /api/index.js/messages/{MSG_ID}
+Method = DELETE, URL = /api/index.js/users/
 
-Parameter -> MSG_ID -> integer -> return 200 status code on success
+Parameter -> MSG_ID -> integer -> returns with success on successful deletion of messages
 
 Creating the Application:
 
 This REST API application contains..
 
-/api /controller messages.js app_db.sql index.js
+/api /controller UserController.js index.js UsersModel.js
 
-In "index.js", I am identifying the "method" which are GET, POST and DELETE, and "request" which has URL information and message/user ID information.
+In "index.js", I am identifying the "method" which are GET, POST and DELETE, and "request" which has URL information and message/user ID information.=
 
-Similarly, "app_db.sql" is a database which contains "messages" table and it contains {'id', 'message', 'created_time', 'is_delete', 'delete_time'} attributes.
-
-In "controller" folder there is one file name "messages.js". This file contains model structure of GET, PUT and DELETE. In all models I'm fetching data from database and maintained error code if I found any errors.
+In "controller" folder there is one file name "UserController.js". This file contains model structure of GET, PUT and DELETE. In all models I'm fetching data from database and maintained error code if I found any errors.
 
 REST API Documentation:
 

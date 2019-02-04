@@ -1,5 +1,5 @@
-// contactController.js
-// Import contact model
+// UserController.js
+// Import User model
 User = require('./usersModel');
 // Handle index actions
 exports.index = function (req, res) {
@@ -59,7 +59,7 @@ user.name = req.body.name ? req.body.name : user.name;
             if (err)
                 res.json(err);
             res.json({
-                message: 'User Info updated',
+                message: 'Message Info updated',
                 data: user
             });
         });
