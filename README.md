@@ -34,9 +34,9 @@ This REST API application contains..
 
 /api /controller UserController.js index.js UsersModel.js
 
-In "index.js", I am identifying the "method" which are GET, POST and DELETE, and "request" which has URL information and message/user ID information.=
+In "index.js", I am identifying the "method" whic]h are GET, POST and DELETE, and "request" which has URL information and message/user ID information.=
 
-In "controller" folder there is one file name "UserController.js". This file contains model structure of GET, PUT and DELETE. In all models I'm fetching data from database and maintained error code if I found any errors.
+With respect to the controllers information, there is one file name "UserController.js". This file contains model structure of GET, PUT and DELETE. In all models I'm fetching data from database and maintained error code if I found any errors.
 
 REST API Documentation:
 
