@@ -1,9 +1,9 @@
 // contactController.js
 // Import contact model
-Contact = require('./contactModel');
+User = require('./usersModel');
 // Handle index actions
 exports.index = function (req, res) {
-    Contact.get(function (err, contacts) {
+    User.get(function (err, Users) {
         if (err) {
             res.json({
                 status: "error",
@@ -12,18 +12,18 @@ exports.index = function (req, res) {
         }
         res.json({
             status: "success",
-            message: "Contacts retrieved successfully",
-            data: contacts
+            message: "Users retrieved successfully",
+            data: Users
         });
     });
 };
 // Handle create contact actions
 exports.new = function (req, res) {
-    var contact = new Contact();
-    contact.name = req.body.name ? req.body.name : contact.name;
-    contact.gender = req.body.gender;
-    contact.email = req.body.email;
-    contact.phone = req.body.phone;
+    var User = new Users();
+    User.name = req.body.name ? req.body.name : User.name;
+    //User.gender = req.body.gender;
+    User.message = req.body.message;
+    User.phone = req.body.phone;
 // save the contact and check for errors
     contact.save(function (err) {
         // if (err)
