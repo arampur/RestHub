@@ -9,12 +9,12 @@ router.get('/', function (req, res) {
     });
 });
 // Import contact controller
-var contactController = require('./contactController');
+var contactController = require('./UserController');
 // Contact routes
-router.route('/contacts')
+router.route('/Users')
     .get(contactController.index)
     .post(contactController.new);
-router.route('/contacts/:contact_id')
+router.route('/Users/:user_id')
     .get(contactController.view)
     .patch(contactController.update)
     .put(contactController.update)

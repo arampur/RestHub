@@ -23,58 +23,58 @@ exports.new = function (req, res) {
     User.name = req.body.name ? req.body.name : User.name;
     //User.gender = req.body.gender;
     User.message = req.body.message;
-    User.phone = req.body.phone;
+    //User.phone = req.body.phone;
 // save the contact and check for errors
-    contact.save(function (err) {
+    User.save(function (err) {
         // if (err)
         //     res.json(err);
 res.json({
             message: 'New contact created!',
-            data: contact
+            data: User
         });
     });
 };
 // Handle view contact info
 exports.view = function (req, res) {
-    Contact.findById(req.params.contact_id, function (err, contact) {
+    User.findById(req.params.contact_id, function (err, User) {
         if (err)
             res.send(err);
         res.json({
             message: 'Contact details loading..',
-            data: contact
+            data: User
         });
     });
 };
 // Handle update contact info
 exports.update = function (req, res) {
-Contact.findById(req.params.contact_id, function (err, contact) {
+User.findById(req.params.user_id, function (err, User) {
         if (err)
             res.send(err);
-contact.name = req.body.name ? req.body.name : contact.name;
-        contact.gender = req.body.gender;
-        contact.email = req.body.email;
-        contact.phone = req.body.phone;
+User.name = req.body.name ? req.body.name : User.name;
+        User.gender = req.body.gender;
+        User.message = req.body.message;
+        //contact.phone = req.body.phone;
 // save the contact and check for errors
-        contact.save(function (err) {
+        User.save(function (err) {
             if (err)
                 res.json(err);
             res.json({
-                message: 'Contact Info updated',
-                data: contact
+                message: 'User Info updated',
+                data: User
             });
         });
     });
 };
 // Handle delete contact
 exports.delete = function (req, res) {
-    Contact.remove({
-        _id: req.params.contact_id
+    User.remove({
+        _message: req.params.message
     }, function (err, contact) {
         if (err)
             res.send(err);
 res.json({
             status: "success",
-            message: 'Contact deleted'
+            message: 'Message deleted'
         });
     });
 };
