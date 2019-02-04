@@ -9,15 +9,15 @@ router.get('/', function (req, res) {
     });
 });
 // Import contact controller
-var contactController = require('./UserController');
+var UserController = require('./UserController');
 // Contact routes
-router.route('/Users')
-    .get(contactController.index)
-    .post(contactController.new);
-router.route('/Users/:user_id')
-    .get(contactController.view)
-    .patch(contactController.update)
-    .put(contactController.update)
-    .delete(contactController.delete);
+router.route('/users')
+    .get(UserController.index)
+    .post(UserController.new);
+router.route('/users/:user_id')
+    .get(UserController.view)
+    .patch(UserController.update)
+    .put(UserController.update)
+    .delete(UserController.delete);
 // Export API routes
 module.exports = router;
